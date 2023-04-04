@@ -444,6 +444,8 @@ GENERATE_BUTTON.addEventListener('click', async (e) => {
 				return [x.getAttribute('param-name'), value]
 			}))
 	};
+	
+data.generation.return_timestamps = "char"
 	switch (TASK_SELECTOR.value) {
 		case 'translation':
 			data.languageFrom = LANGUAGE_FROM.value

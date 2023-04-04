@@ -10,7 +10,8 @@ env.onnx.wasm.wasmPaths = DIST_DIR;
 
 // If we are running locally, we should use the local model files (speeds up development)
 // Otherwise, we should use the remote files
-env.remoteModels = location.hostname !== '127.0.0.1' && location.hostname !== 'localhost';
+//env.remoteModels = location.hostname !== '127.0.0.1' && location.hostname !== 'localhost';
+env.remoteModels = true;
 
 // Define task function mapping
 const TASK_FUNCTION_MAPPING = {
@@ -37,6 +38,7 @@ self.addEventListener('message', async (event) => {
     if (!fn) return
 
     let result = await fn(data);
+console.log(result);
     self.postMessage({
         task: data.task,
         type: 'result',
